@@ -1,8 +1,8 @@
 Package.describe({
-  name: 'cfs:gridfs',
-  version: '0.0.27',
-  summary: 'GridFS storage adapter for CollectionFS',
-  git: 'https://github.com/CollectionFS/Meteor-cfs-gridfs.git'
+  name: 'gliese:cfs-gridfs',
+  version: '0.0.28',
+  summary: 'Gliese flavour of the GridFS storage adapter for CFS (INTERNAL USE ONLY)',
+  git: 'https://github.com/gliesesoftware/cfs-gridfs.git'
 });
 
 Npm.depends({
@@ -14,13 +14,13 @@ Npm.depends({
 Package.onUse(function(api) {
   api.versionsFrom('1.0');
 
-  api.use(['cfs:base-package@0.0.27', 'cfs:storage-adapter@0.1.1']);
+  api.use(['gliese:cfs-base@0.0.28', 'gliese:cfs-storage@0.1.2']);
   api.addFiles('gridfs.server.js', 'server');
   api.addFiles('gridfs.client.js', 'client');
 });
 
 Package.onTest(function(api) {
-  api.use(['cfs:gridfs', 'test-helpers', 'tinytest'], 'server');
+  api.use(['gliese:cfs-gridfs', 'test-helpers', 'tinytest'], 'server');
   api.addFiles('tests/server-tests.js', 'server');
   api.addFiles('tests/client-tests.js', 'client');
 });
